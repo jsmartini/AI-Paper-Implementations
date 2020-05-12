@@ -74,18 +74,6 @@ class VGG16(nn.Module):
         x = self.linear(x)
         return smax(x)
     
-    def fitDataPoint(self, x, y):
-        #takes input and label, outputs loss object
-        optimizer.zero_grad()
-        loss = criteria(self.forward(x), y)
-        optimizer.step()
-        return loss
-        
-    def runValidation(self, x, y):
-        # runs the validation test data, outputs loss object, no auto-grad
-         with torch.no_grad():
-            return criteria(self.forward(x), y)
-        
     def save(self, fname = "VGG16-{0}".format(datetime.now().time().__str__())):
         torch.save(self.state_dict(), fname)
         print("Successfully Saved {0}".format(fname))
