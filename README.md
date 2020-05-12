@@ -1,5 +1,5 @@
 # ML-Implementation
-Algorithms I implement from papers as I learn machine learning
+Machine Learning models implemented from academic papers.
 
     -- CIFAR10 basic CNN
         -- TF -> 83.3% on validation data
